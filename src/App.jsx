@@ -6,20 +6,23 @@ import Footer from './components/Footer'
 import CreateNote from './components/CreateArea'
 
 
-
-
-
-
 function App() {
   const[items, setItems] = useState([]);
 
-  function addItem(input){
+  function addItem(input){                         
     setItems(prevItems => {
         return [...prevItems, input]
     })
+        }
 
-         console.log(items);
-      }
+  function deleteItem(id){                         // this function deletes the items whose id is equal to the index of the
+                                                  //array while using filter method by returning a new array without that id.
+          setItems(prevItems => {
+          return prevItems.filter((items, index) => {
+            return index !== id
+          })
+        })
+  }
 
   
  return(
@@ -30,8 +33,13 @@ function App() {
    
    {
 
-     items.map((notes) => {
-     return <Note title = {notes.title}   content = {notes.content}  />
+     items.map((notes, index) => {
+     return <Note
+    title={notes.title} 
+    key={index} 
+    id={index}   
+    content={notes.content}  
+    onDelete={deleteItem} />
      })
 
 
