@@ -1,4 +1,6 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 * {
@@ -19,37 +21,31 @@ header {
   margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 500px;
 }
 
 header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
-  font-weight: 200;
+  font-weight: 400;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
 
-footer p {
-  color: #ccc;
-}
 .note {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
-  margin: 16px;
+  width: 250px;
+  margin: 10px;
   float: left;
 }
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .note p {
   font-size: 1.1em;
@@ -102,4 +98,19 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+
+.ShowArea{
+  position: relative;
+  width: 350px;
+  margin: 125px auto 20px auto;
+  background: none;
+  padding: 15px;
+  text-align: center;
+ 
+}
+
+.SearchBar{
+  border-radius: 10px;
 }
